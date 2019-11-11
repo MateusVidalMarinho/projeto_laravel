@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
+    public function __construct(Request $request) {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
 
     public function index()
     {
@@ -32,7 +35,6 @@ class CategoriaController extends Controller
 
     public function edit(Categoria $categoria)
     {
-        var_dump($categoria);
         return view('categoria.edit')->with('categoria',$categoria);
     }
 

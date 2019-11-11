@@ -14,8 +14,8 @@
     <tbody>
         @foreach($jogadorJogos as $a)
         <tr>
-            <td>{{$a->jogadors}}</td>
-            <td>{{$a->jogos}}</td>
+            <td>{{$a->jogador_id}}</td>
+            <td>{{$a->jogo_id}}</td>
             <td><a class="btn btn-warning" href="jogador-jogos/{{$a->id}}/edit">Editar</a></td>
         </tr>
         @endforeach

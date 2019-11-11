@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class ProdutoraController extends Controller
 {
+    public function __construct(Request $request) {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
 
     public function index()
     {

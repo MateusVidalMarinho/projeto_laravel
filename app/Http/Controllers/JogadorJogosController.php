@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class JogadorJogosController extends Controller
 {
+    public function __construct(Request $request) {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     public function index()
     {
         $jogadorJogos = JogadorJogos::all();
