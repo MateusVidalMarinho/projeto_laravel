@@ -9,7 +9,7 @@ class Jogador extends Model
     protected $fillable=['nome','email'];
     public $timestamps=false;
 
-    public function jogoJogador() {
-        return $this->belongsToMany('App\Jogos');
+    public function jogos() {
+        return $this->belongsToMany('App\Jogos', 'jogador_jogos');
     }
 }

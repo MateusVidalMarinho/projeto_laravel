@@ -24,24 +24,11 @@ class JogadorJogosController extends Controller
 
     public function store(Request $request)
     {
-        // $request->except('_token');
+        $jogador = Jogador::find($request->all()['jogador_id']);
+        $jogo = Jogo::find($request->all()['jogo_id']);
+        $jogo->jogadors()->attach($jogador);
 
-        // $jogador = Jogador::find(1);
-        // $jogo = new Jogo($request->all());
-        // $jogo->jogadorJogo()->attach($jogador);
-
-        $jogadorJogos = new JogadorJogos($request->except('_token'));
-        // $jogador = Jogador::find($request->all()['jogador_id']);
-        // var_dump($jogador);exit;
-        $jogadorJogos->jogador = Jogador::find($request->all()['jogador_id']);
-        $jogadorJogos->jogos = Jogo::find($request->all()['jogo_id']);
-        // $jogadorJogos->jogador_id = $request->all()['jogador_id'];
-        // $jogadorJogos->jogo_id = $request->all()['jogo_id'];
-        $jogadorJogos->save();
-
-        // var_dump($request->all());exit;
-        // JogadorJogos::create($request->all());
-        return redirect('jogadorJogos');
+        return redirect('jogador-jogos');
     }
 
     public function show(JogadorJogos $jogadorJogos)
@@ -59,7 +46,7 @@ class JogadorJogosController extends Controller
     public function update(Request $request, JogadorJogos $jogadorJogos)
     {
         $jogadorJogos->update($request->all());
-        return redirect('jogadorJogos');
+        return redirect('jogador-jogos');
     }
 
     public function destroy(JogadorJogos $jogadorJogos)

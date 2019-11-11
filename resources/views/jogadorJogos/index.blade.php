@@ -6,16 +6,16 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Descrição</th>
+            <th>Jogador</th>
+            <th>Jogo</th>
             <th>Ação</th>
         </tr>
     </thead>
     <tbody>
         @foreach($jogadorJogos as $a)
         <tr>
-            <td>{{$a->nome}}</td>
-            <td>{{$a->descricao}}</td>
+            <td>{{$a->jogadors}}</td>
+            <td>{{$a->jogos}}</td>
             <td><a class="btn btn-warning" href="jogador-jogos/{{$a->id}}/edit">Editar</a></td>
         </tr>
         @endforeach

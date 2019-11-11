@@ -13,7 +13,7 @@ class CreateJogadorJogoTable extends Migration
      */
     public function up()
     {
-        Schema::create('jogador_jogo', function (Blueprint $table) {
+        Schema::create('jogador_jogos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer("jogo_id")->unsigned();
             $table->foreign("jogo_id")->references('id')->on("jogos");
