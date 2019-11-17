@@ -10,7 +10,7 @@ class JogadorController extends Controller
     public function __construct(Request $request) {
         $this->middleware('auth', ['except' => ['index']]);
     }
-    
+
     public function index()
     {
         $jogadores = Jogador::all();

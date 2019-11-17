@@ -8,16 +8,18 @@
         <tr>
             <th>Jogador</th>
             <th>Jogo</th>
-            <th>Ação</th>
+            <!-- <th>Ação</th> -->
         </tr>
     </thead>
     <tbody>
         @foreach($jogadorJogos as $a)
+        @foreach($a->jogos as $j)
         <tr>
-            <td>{{$a->jogador_id}}</td>
-            <td>{{$a->jogo_id}}</td>
-            <td><a class="btn btn-warning" href="jogador-jogos/{{$a->id}}/edit">Editar</a></td>
+            <td>{{$a->nome}}</td>
+            <td>{{$j->nome}}</td>
+            <!-- <td><a class="btn btn-warning" href="/jogador-jogos/{{$a->id}}/edit">Editar</a></td> -->
         </tr>
+        @endforeach
         @endforeach
     </tbody>
 </table>

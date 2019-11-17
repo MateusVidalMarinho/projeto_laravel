@@ -10,6 +10,6 @@ class Jogador extends Model
     public $timestamps=false;
 
     public function jogos() {
-        return $this->belongsToMany('App\Jogos', 'jogador_jogos');
+        return $this->belongsToMany('App\Jogo', 'jogador_jogos');
     }
 }

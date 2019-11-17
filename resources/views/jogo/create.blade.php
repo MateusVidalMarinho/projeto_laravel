@@ -5,15 +5,15 @@
     @csrf
     <div class="form-group">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" class="form-control">
+        <input type="text" name="nome" id="nome" class="form-control" required autofocus>
     </div>
     <div class="form-group">
         <label for="descricao">Descrição</label>
-        <textarea name="descricao" id="descricao" class="form-control"></textarea>
+        <textarea name="descricao" id="descricao" class="form-control" required></textarea>
     </div>
     <div class="form-group">
         <label for="categoria_id">Categoria</label>
-        <select name="categoria_id" id="categoria_id" class="form-control">
+        <select name="categoria_id" id="categoria_id" class="form-control" required>
             @foreach($categorias as $a)
             <option value="{{ $a->id }}">{{$a->nome}}</option>
             @endforeach
@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <label for="produtora_id">Produtora</label>
-        <select name="produtora_id" id="produtora_id" class="form-control">
+        <select name="produtora_id" id="produtora_id" class="form-control" required>
             @foreach($produtoras as $a)
             <option value="{{ $a->id }}">{{$a->nome}}</option>
             @endforeach
