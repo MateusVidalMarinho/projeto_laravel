@@ -15,16 +15,24 @@
     <div class="form-group">
         <label for="categoria_id">Categoria</label>
         <select name="categoria_id" id="categoria_id" required>
-            @foreach($categorias as $a)
-            <option value="{{ $a->id }}" <?php echo ($jogo->categoria_id) ? 'selected' : '' ?>>{{$a->nome}}</option>
+            @foreach($categorias as $categoria)
+            <option value="{{ $categoria->id }}" <?php echo ($jogo->categoria_id) ? 'selected' : '' ?>>{{$categoria->nome}}</option>
             @endforeach
         </select>
     </div>
     <div class="form-group">
         <label for="produtora_id">Produtora</label>
         <select name="produtora_id" id="produtora_id" required>
-            @foreach($produtoras as $a)
-            <option value="{{ $a->id }}" <?php echo ($jogo->produtora_id) ? 'selected' : '' ?>>{{$a->nome}}</option>
+            @foreach($produtoras as $produtora)
+            <option value="{{ $produtora->id }}" <?php echo ($jogo->produtora_id) ? 'selected' : '' ?>>{{$produtora->nome}}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="dlc_id">Dlc</label>
+        <select name="dlc_id" id="dlc_id" required>
+            @foreach($dlcs as $dlc)
+            <option value="{{ $dlc->id }}" <?php echo ($jogo->dlc_id) ? 'selected' : '' ?>>{{$dlc->nome}}</option>
             @endforeach
         </select>
     </div>

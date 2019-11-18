@@ -86,6 +86,7 @@
                     <a href="/jogo">Jogos</a>
                     <a href="/jogador">Jogadores</a>
                     <a href="/produtora">Produtoras</a>
+                    <a href="/dlc">Dlcs</a>
                     <a href="/categoria">Categorias</a>
                     <a href="/jogador-jogos">JogadoresJogos</a>
                 </div>

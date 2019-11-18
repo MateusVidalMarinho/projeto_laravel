@@ -10,6 +10,7 @@
             <th>Descrição</th>
             <th>Categoria</th>
             <th>Produtora</th>
+            <th>Dlc</th>
             <th>Ação</th>
         </tr>
     </thead>
@@ -20,6 +21,7 @@
             <td>{{$a->descricao}}</td>
             <td>{{$a->categoria->nome}}</td>
             <td>{{$a->produtora->nome}}</td>
+            <td>{{$a->dlc->nome}}</td>
             <td><a class="btn btn-warning" href="jogo/{{$a->id}}/edit">Editar</a></td>
         </tr>
         @endforeach

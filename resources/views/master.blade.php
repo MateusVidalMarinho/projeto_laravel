@@ -21,6 +21,7 @@
                     <li class="nav-item"><a class="nav-link" href="/jogo">Jogos</a></li>
                     <li class="nav-item"><a class="nav-link" href="/jogador">Jogadores</a></li>
                     <li class="nav-item"><a class="nav-link" href="/produtora">Produtoras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dlc">Dlcs</a></li>
                     <li class="nav-item"><a class="nav-link" href="/categoria">Categorias</a></li>
                     <li class="nav-item"><a class="nav-link" href="/jogador-jogos">Jogador Jogos</a></li>
                     @guest

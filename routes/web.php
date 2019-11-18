@@ -9,6 +9,7 @@ Route::resource('jogador','JogadorController');
 Route::resource('categoria','CategoriaController');
 Route::resource('jogador-jogos','JogadorJogosController');
 Route::resource('produtora','ProdutoraController');
+Route::resource('dlc','DlcController');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

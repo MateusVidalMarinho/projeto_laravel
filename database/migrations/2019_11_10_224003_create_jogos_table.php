@@ -19,6 +19,8 @@ class CreateJogosTable extends Migration
             $table->text('descricao')->nullable();
             $table->integer("categoria_id")->unsigned();
             $table->foreign("categoria_id")->references('id')->on("categorias");
+            $table->integer("dlc_id")->unsigned();
+            $table->foreign("dlc_id")->references('id')->on("dlcs");
             $table->integer("produtora_id")->unsigned();
             $table->foreign("produtora_id")->references('id')->on("produtoras");
         });

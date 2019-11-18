@@ -27,6 +27,14 @@
             @endforeach
         </select>
     </div>
+    <div class="form-group">
+        <label for="dlc_id">Dlc</label>
+        <select name="dlc_id" id="dlc_id" class="form-control" required>
+            @foreach($dlcs as $a)
+            <option value="{{ $a->id }}">{{$a->nome}}</option>
+            @endforeach
+        </select>
+    </div>
     <button class="btn btn-secondary" type="reset">Limpar</button>
     <button class="btn btn-primary" type="submit">Enviar</button>
 </form>

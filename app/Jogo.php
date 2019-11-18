@@ -17,6 +17,10 @@ class Jogo extends Model
         return $this->belongsTo('App\Produtora', 'produtora_id', 'id');
     }
 
+    public function dlc() {
+        return $this->belongsTo('App\Dlc', 'dlc_id', 'id');
+    }
+
     public function jogadors() {
         return $this->belongsToMany('App\Jogador', 'jogador_jogos');
     }

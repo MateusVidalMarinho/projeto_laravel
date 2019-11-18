@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Categoria;
 use App\Jogo;
 use App\Produtora;
+use App\Dlc;
 use Illuminate\Http\Request;
 
 class JogoController extends Controller
@@ -24,7 +25,8 @@ class JogoController extends Controller
     {
         $categorias = Categoria::all();
         $produtoras = Produtora::all();
-        return view ('jogo.create', ['categorias' => $categorias, 'produtoras' => $produtoras]);
+        $dlcs = Dlc::all();
+        return view ('jogo.create', ['categorias' => $categorias, 'produtoras' => $produtoras, 'dlcs' => $dlcs]);
     }
 
     public function store(Request $request)
@@ -32,6 +34,7 @@ class JogoController extends Controller
         $jogo = new Jogo($request->all());
         $jogo->categoria_id = $request->all()['categoria_id'];
         $jogo->produtora_id = $request->all()['produtora_id'];
+        $jogo->dlc_id = $request->all()['dlc_id'];
         $jogo->save();
         return redirect('jogo');
     }
@@ -45,12 +48,17 @@ class JogoController extends Controller
     {
         $categorias = Categoria::all();
         $produtoras = Produtora::all();
+        $dlcs = Dlc::all();
 
-        return view('jogo.edit', ['jogo' => $jogo, 'categorias' => $categorias, 'produtoras' => $produtoras]);
+        return view('jogo.edit', ['jogo' => $jogo, 'categorias' => $categorias, 'produtoras' => $produtoras, 'dlcs' => $dlcs]);
     }
 
     public function update(Request $request, Jogo $jogo)
     {
+        $jogo->categoria_id = $request->all()['categoria_id'];
+        $jogo->produtora_id = $request->all()['produtora_id'];
+        $jogo->dlc_id = $request->all()['dlc_id'];
+
         $jogo->update($request->all());
         return redirect('jogo');
     }
