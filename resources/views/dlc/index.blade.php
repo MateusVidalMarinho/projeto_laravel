@@ -1,7 +1,7 @@
 @extends('master')
 @section('titulo','Dlcs')
 @section('conteudo')
-<h3>Categorias</h3>
+<h3>Dlcs</h3>
 <a class="btn btn-success mb-3" href="/dlc/create">Novo Dlc</a>
 <table class="table">
     <thead>
